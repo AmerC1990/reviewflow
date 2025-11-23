@@ -10,9 +10,6 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className="w-full p-5 flex justify-between items-center bg-white shadow">
         <h1 className="text-2xl font-bold text-blue-600">ReviewFlow</h1>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium">
-          Join Waitlist
-        </button>
       </nav>
 
       {/* HERO SECTION */}
@@ -21,32 +18,47 @@ export default function Home() {
           Reply to Google Reviews in Seconds with AI
         </h2>
         <p className="text-lg text-gray-600 mt-4">
-          ReviewFlow helps small businesses craft perfect, personalized review replies instantly —
+          ReviewFlow helps small businesses craft perfect, personalized review replies instantly — 
           saving time, boosting reputation, and improving local rankings.
         </p>
 
-        {/* CONVERTKIT FORM */}
+        {/* REAL CONVERTKIT FORM */}
         <div className="mt-8 flex justify-center">
           <div
             dangerouslySetInnerHTML={{
               __html: `
-                <form action="https://app.kit.com/forms/8801942/subscriptions" 
-                  class="seva-form formkit-form" method="post"
-                  data-sv-form="8801942" data-uid="47a34e4c30" data-format="inline"
-                  min-width="400 500 600 700 800"
+                <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+                <form action="https://app.kit.com/forms/8801942/subscriptions"
+                  class="seva-form formkit-form"
+                  method="post"
+                  data-sv-form="8801942"
+                  data-uid="47a34e4c30"
+                  data-format="inline"
+                  data-version="5"
+                  data-options='{"version":"5"}'
                 >
-                  <div data-style="clean">
-                    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-                    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-                      <div class="formkit-field">
-                        <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email">
+                  ${/* 👇 Your full embed code EXACTLY as provided */""}
+                  ${`<div data-style="clean">
+                      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                      <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+                        <div class="formkit-field">
+                          <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email">
+                        </div>
+                        <button data-element="submit" class="formkit-submit formkit-submit">
+                          <div class="formkit-spinner"><div></div><div></div><div></div></div>
+                          <span>Subscribe</span>
+                        </button>
                       </div>
-                      <button data-element="submit" class="formkit-submit formkit-submit">
-                        <div class="formkit-spinner"><div></div><div></div><div></div></div>
-                        <span>Join Waitlist</span>
-                      </button>
+                      <div class="formkit-powered-by-convertkit-container">
+                        <a href="https://kit.com/features/forms" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">
+                          Built with Kit
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                    <style>
+                      ${/* Paste the ENTIRE <style> block exactly as provided */""}
+                      ${`/* Full ConvertKit style copied from your embed */`}
+                    </style>`}
                 </form>
               `,
             }}
@@ -98,37 +110,6 @@ export default function Home() {
             <h4 className="text-xl font-bold">Premium — $99/yr</h4>
             <p className="mt-2 text-gray-600">All Pro features • Priority Support</p>
           </div>
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="mt-24 mb-20 text-center">
-        <h3 className="text-3xl font-bold">Start Your Free 14-Day Trial</h3>
-        <p className="text-gray-600 mt-2">No credit card required</p>
-
-        <div className="mt-6">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `
-                <form action="https://app.kit.com/forms/8801942/subscriptions" 
-                  class="seva-form formkit-form" method="post"
-                  data-sv-form="8801942" data-uid="47a34e4c30" data-format="inline"
-                  min-width="400 500 600 700 800"
-                >
-                  <div data-style="clean">
-                    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-                      <div class="formkit-field">
-                        <input class="formkit-input" name="email_address" aria-label="Email" placeholder="Email Address" required type="email">
-                      </div>
-                      <button data-element="submit" class="formkit-submit">
-                        <span>Join Waitlist</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              `,
-            }}
-          />
         </div>
       </section>
     </div>
