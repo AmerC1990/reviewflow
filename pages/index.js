@@ -39,25 +39,9 @@ const CK_FORM_HTML = `
   <style>
     .formkit-form[data-uid="47a34e4c30"] *{box-sizing:border-box;}
     .formkit-form[data-uid="47a34e4c30"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-    .formkit-form[data-uid="47a34e4c30"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}
-    .formkit-form[data-uid="47a34e4c30"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}
-    .formkit-form[data-uid="47a34e4c30"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}
-    .formkit-form[data-uid="47a34e4c30"] h1,
-    .formkit-form[data-uid="47a34e4c30"] h2,
-    .formkit-form[data-uid="47a34e4c30"] h3,
-    .formkit-form[data-uid="47a34e4c30"] h4,
-    .formkit-form[data-uid="47a34e4c30"] h5,
-    .formkit-form[data-uid="47a34e4c30"] h6{color:inherit;font-size:inherit;font-weight:inherit;}
-    .formkit-form[data-uid="47a34e4c30"] h2{font-size:1.5em;margin:1em 0;}
-    .formkit-form[data-uid="47a34e4c30"] h3{font-size:1.17em;margin:1em 0;}
-    .formkit-form[data-uid="47a34e4c30"] p{color:inherit;font-size:inherit;font-weight:inherit;}
     .formkit-form[data-uid="47a34e4c30"] .formkit-input,
     .formkit-form[data-uid="47a34e4c30"] .formkit-select,
     .formkit-form[data-uid="47a34e4c30"] .formkit-checkboxes{width:100%;}
-    .formkit-form[data-uid="47a34e4c30"] .formkit-button,
-    .formkit-form[data-uid="47a34e4c30"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}
-    .formkit-form[data-uid="47a34e4c30"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;flex:1 0 auto;line-height:1.4;margin:0;transition:border-color ease-out 300ms;}
-    .formkit-form[data-uid="47a34e4c30"] .formkit-input:focus{outline:none;border-color:#1677be;transition:border-color ease 300ms;}
   </style>
 </form>
 `;
@@ -96,6 +80,7 @@ export default function Home() {
             Reply to Google Reviews in Seconds&nbsp;
             <span className="text-blue-600">with AI</span>
           </h1>
+
           <p className="mt-4 text-lg text-gray-600">
             ReviewFlow is built for restaurants that are too busy to reply to
             every review, but care deeply about reputation. Get fast,
@@ -114,37 +99,45 @@ export default function Home() {
             <p className="text-sm font-semibold text-gray-800 mb-2">
               Join the early access waitlist for restaurants
             </p>
-            <div
-              className="w-full max-w-md"
-              dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
-            />
+
+            {/* FIXED FORM WRAPPER */}
+            <div className="w-full max-w-md">
+              <div
+                className="[&_.formkit-form]:w-full [&_.formkit-fields]:flex [&_.formkit-fields]:flex-col [&_.formkit-field]:w-full [&_.formkit-submit]:w-full"
+                dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
+              />
+            </div>
+
             <p className="mt-2 text-xs text-gray-500">
               No spam. We’ll only email you when early access is ready.
             </p>
           </div>
         </div>
 
+        {/* RIGHT SIDE CARD */}
         <div className="bg-white shadow-md rounded-xl p-6 border border-gray-100">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             How ReviewFlow helps your restaurant
           </h2>
+
           <div className="space-y-4 text-sm text-gray-700">
             <div>
               <span className="font-semibold text-gray-900">1. Paste a review</span>
-              <p>
-                Copy a Google review into ReviewFlow or connect your Google Business Profile.
-              </p>
+              <p>Copy a Google review or connect your Google Business Profile.</p>
             </div>
+
             <div>
               <span className="font-semibold text-gray-900">2. AI writes a reply</span>
               <p>
-                Get a thoughtful, on-brand response tailored to the tone of the customer’s review in seconds.
+                Get a thoughtful, on-brand response tailored to the tone of the
+                customer’s review in seconds.
               </p>
             </div>
+
             <div>
               <span className="font-semibold text-gray-900">3. Post with one click</span>
               <p>
-                Approve the reply, then post it to Google — no copy/paste gymnastics.
+                Approve the reply, then post it directly to Google — no hassle.
               </p>
             </div>
           </div>
@@ -164,34 +157,30 @@ export default function Home() {
           Built for real restaurant life — not tech demos
         </h2>
         <p className="mt-2 text-center text-gray-600 text-sm sm:text-base">
-          You&apos;re juggling staff, customers, and the kitchen. ReviewFlow quietly handles reviews in the background.
+          You're juggling staff, customers, and the kitchen. ReviewFlow quietly
+          handles reviews in the background.
         </p>
 
         <div className="mt-10 grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-            <h3 className="text-lg font-semibold text-gray-900">
-              AI replies that feel human
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900">AI replies that feel human</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Every response is polite, personal, and sounds like a real person from your restaurant — not a robot.
+              Every response is polite, personal, and sounds like a real person
+              from your restaurant — not a robot.
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-            <h3 className="text-lg font-semibold text-gray-900">
-              Protect your reputation
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900">Protect your reputation</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Turn bad experiences into second chances. Quickly reply to negative reviews with empathy and professionalism.
+              Turn bad experiences into second chances with empathetic responses.
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-            <h3 className="text-lg font-semibold text-gray-900">
-              Save hours every week
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900">Save hours every week</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Stop spending your only day off writing replies. Let ReviewFlow handle the writing so you can run your restaurant.
+              Stop spending your day off writing replies. Let ReviewFlow do it.
             </p>
           </div>
         </div>
@@ -205,9 +194,9 @@ export default function Home() {
           </p>
           <p className="text-gray-800 text-sm sm:text-base">
             Whether you run a neighborhood café or a busy family restaurant,
-            reviews now matter as much as the food. ReviewFlow is designed to
-            give small restaurant teams the same review response quality as big chains —
-            without hiring a full-time marketing person.
+            reviews now matter as much as the food. ReviewFlow gives small
+            restaurants the same review-response power as big chains — without a
+            full-time staff.
           </p>
         </div>
       </section>
@@ -216,8 +205,8 @@ export default function Home() {
       <section className="max-w-4xl mx-auto mt-20 px-4 lg:px-0 text-center">
         <h2 className="text-2xl font-bold text-gray-900">Early access pricing</h2>
         <p className="mt-2 text-gray-600 text-sm sm:text-base">
-          We&apos;re still finalizing plans, but early restaurant users will get
-          simple, affordable pricing and locked-in discounts.
+          We're still finalizing plans, but early restaurant users get simple,
+          affordable pricing and locked-in discounts.
         </p>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-6">
@@ -226,7 +215,7 @@ export default function Home() {
             <p className="mt-1 text-sm text-gray-500">For tiny teams</p>
             <p className="mt-4 text-2xl font-bold text-gray-900">TBD</p>
             <p className="mt-2 text-xs text-gray-500">
-              Limited reviews / month, perfect for small cafés.
+              Limited reviews/month — perfect for cafés.
             </p>
           </div>
 
@@ -235,7 +224,7 @@ export default function Home() {
             <p className="mt-1 text-sm text-blue-100">Most popular</p>
             <p className="mt-4 text-2xl font-bold">Early-bird pricing</p>
             <p className="mt-2 text-xs text-blue-100">
-              Unlimited AI replies for one location.
+              Unlimited replies for one location.
             </p>
           </div>
 
@@ -255,15 +244,19 @@ export default function Home() {
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
           Want first access when ReviewFlow launches for restaurants?
         </h2>
+
         <p className="mt-3 text-sm sm:text-base text-gray-600">
-          Join the waitlist and we&apos;ll invite you as soon as the restaurant version is ready. No obligation.
+          Join the waitlist — we’ll invite you as soon as the restaurant version is ready.
         </p>
 
         <div className="mt-6 flex justify-center">
-          <div
-            className="w-full max-w-md"
-            dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
-          />
+          {/* FIXED FORM WRAPPER */}
+          <div className="w-full max-w-md">
+            <div
+              className="[&_.formkit-form]:w-full [&_.formkit-fields]:flex [&_.formkit-fields]:flex-col [&_.formkit-field]:w-full [&_.formkit-submit]:w-full"
+              dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
+            />
+          </div>
         </div>
 
         <p className="mt-2 text-xs text-gray-500">
