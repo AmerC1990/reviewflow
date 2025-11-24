@@ -85,7 +85,8 @@ export default function Home() {
 
       {/* HERO */}
       <section className="max-w-5xl mx-auto mt-16 px-4 lg:px-0 grid lg:grid-cols-2 gap-10 items-center">
-        {/* LEFT SIDE */}
+
+        {/* LEFT */}
         <div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
             Reply to Google Reviews in Seconds&nbsp;
@@ -126,7 +127,8 @@ export default function Home() {
 
         {/* RIGHT CARD */}
         <div className="bg-white shadow-md rounded-xl p-0 border border-gray-100 overflow-hidden">
-          {/* Image */}
+
+          {/* IMAGE */}
           <img
             src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=60"
             alt="Restaurant Interior"
@@ -138,24 +140,28 @@ export default function Home() {
               How ReviewFlow helps your restaurant
             </h2>
 
+            {/* UPDATED AUTOMATION STEPS */}
             <div className="space-y-4 text-sm text-gray-700">
+
               <div>
-                <span className="font-semibold text-gray-900">1. Paste a review</span>
-                <p>Copy a Google review or connect your Google Business Profile.</p>
+                <span className="font-semibold text-gray-900">1. Connect your Google Business Profile</span>
+                <p>Import all your Google reviews instantly — no copy/paste or manual work.</p>
               </div>
 
               <div>
-                <span className="font-semibold text-gray-900">2. AI writes a reply</span>
+                <span className="font-semibold text-gray-900">2. AI writes personalized replies automatically</span>
                 <p>
-                  Get a thoughtful, on-brand response tailored to the tone of the
-                  customer’s review in seconds.
+                  Get thoughtful, on-brand responses crafted in seconds for every review.
                 </p>
               </div>
 
               <div>
-                <span className="font-semibold text-gray-900">3. Post with one click</span>
-                <p>Approve the reply, then post it directly to Google — no hassle.</p>
+                <span className="font-semibold text-gray-900">3. Approve or auto-post to Google</span>
+                <p>
+                  Publish replies with one click — or let ReviewFlow handle it automatically.
+                </p>
               </div>
+
             </div>
 
             <div className="mt-6 border-t pt-4 text-xs text-gray-500">
@@ -168,7 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EVERYTHING BELOW stays unchanged */}
+      {/* EVERYTHING BELOW UNCHANGED */}
       {/* FEATURES */}
       <section className="max-w-5xl mx-auto mt-20 px-4 lg:px-0">
         <h2 className="text-2xl font-bold text-gray-900 text-center">
@@ -182,9 +188,7 @@ export default function Home() {
         <div className="mt-10 grid md:grid-cols-3 gap-8">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
             <h3 className="text-lg font-semibold text-gray-900">AI replies that feel human</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Every response feels personal — never robotic.
-            </p>
+            <p className="mt-2 text-sm text-gray-600">Every response feels personal — never robotic.</p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
@@ -225,6 +229,7 @@ export default function Home() {
         </p>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-6">
+
           <div className="bg-white border border-gray-100 rounded-xl p-5">
             <h3 className="font-semibold text-gray-900">Starter</h3>
             <p className="mt-1 text-sm text-gray-500">For tiny teams</p>
@@ -272,5 +277,3 @@ export default function Home() {
     </div>
   );
 }
-
-
