@@ -88,9 +88,11 @@ export default function Home() {
 
         {/* LEFT */}
         <div>
+
+          {/* ⭐ UPDATED HEADLINE ⭐ */}
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-            Reply to Google Reviews in Seconds&nbsp;
-            <span className="text-blue-600">with AI</span>
+            Reply to Google Reviews in Seconds —{" "}
+            <span className="text-blue-600">Built for Restaurants</span>
           </h1>
 
           <p className="mt-4 text-lg text-gray-600">
@@ -140,7 +142,7 @@ export default function Home() {
               How ReviewFlow helps your restaurant
             </h2>
 
-            {/* UPDATED AUTOMATION STEPS */}
+            {/* AUTOMATED STEPS */}
             <div className="space-y-4 text-sm text-gray-700">
 
               <div>
