@@ -11,10 +11,10 @@ const CK_FORM_HTML = `
   min-width="400 500 600 700 800"
 >
   <div data-style="clean">
-
     <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
-    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields" style="display:flex;flex-direction:column;gap:12px;width:100%;">
+    <div data-element="fields" class="seva-fields formkit-fields" 
+      style="display:flex;flex-direction:column;gap:14px;width:100%;">
 
       <div class="formkit-field" style="width:100%;">
         <input
@@ -26,10 +26,10 @@ const CK_FORM_HTML = `
           type="email"
           style="
             width:100%;
-            padding:14px;
-            border:1.6px solid #d1d1d1;
-            border-radius:6px;
-            font-size:16px;
+            padding:16px;
+            border:2px solid #d5d5d5;
+            border-radius:8px;
+            font-size:17px;
             font-weight:400;
             color:#000;
           "
@@ -41,12 +41,12 @@ const CK_FORM_HTML = `
         class="formkit-submit"
         style="
           width:100%;
-          padding:14px;
+          padding:16px;
           background-color:#1677be;
           color:white;
-          font-size:16px;
+          font-size:17px;
           font-weight:600;
-          border-radius:6px;
+          border-radius:8px;
           cursor:pointer;
         "
       >
@@ -54,7 +54,6 @@ const CK_FORM_HTML = `
       </button>
 
     </div>
-
   </div>
 </form>
 `;
@@ -77,9 +76,7 @@ export default function Home() {
           <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
             R
           </div>
-          <span className="text-xl font-semibold text-gray-900">
-            ReviewFlow
-          </span>
+          <span className="text-xl font-semibold text-gray-900">ReviewFlow</span>
         </div>
         <div className="hidden sm:block text-sm text-gray-500">
           Built for busy restaurant owners
@@ -88,6 +85,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="max-w-5xl mx-auto mt-16 px-4 lg:px-0 grid lg:grid-cols-2 gap-10 items-center">
+        {/* LEFT SIDE */}
         <div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
             Reply to Google Reviews in Seconds&nbsp;
@@ -107,7 +105,7 @@ export default function Home() {
             <li>✅ Keeps your tone polite, professional, and on-brand</li>
           </ul>
 
-          {/* TOP FORM */}
+          {/* FORM */}
           <div className="mt-8">
             <p className="text-sm font-semibold text-gray-800 mb-2">
               Join the early access waitlist for restaurants
@@ -127,42 +125,50 @@ export default function Home() {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="bg-white shadow-md rounded-xl p-6 border border-gray-100">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            How ReviewFlow helps your restaurant
-          </h2>
+        <div className="bg-white shadow-md rounded-xl p-0 border border-gray-100 overflow-hidden">
+          {/* Image */}
+          <img
+            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=60"
+            alt="Restaurant Interior"
+            className="w-full h-56 object-cover"
+          />
 
-          <div className="space-y-4 text-sm text-gray-700">
-            <div>
-              <span className="font-semibold text-gray-900">1. Paste a review</span>
-              <p>Copy a Google review or connect your Google Business Profile.</p>
+          <div className="p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+              How ReviewFlow helps your restaurant
+            </h2>
+
+            <div className="space-y-4 text-sm text-gray-700">
+              <div>
+                <span className="font-semibold text-gray-900">1. Paste a review</span>
+                <p>Copy a Google review or connect your Google Business Profile.</p>
+              </div>
+
+              <div>
+                <span className="font-semibold text-gray-900">2. AI writes a reply</span>
+                <p>
+                  Get a thoughtful, on-brand response tailored to the tone of the
+                  customer’s review in seconds.
+                </p>
+              </div>
+
+              <div>
+                <span className="font-semibold text-gray-900">3. Post with one click</span>
+                <p>Approve the reply, then post it directly to Google — no hassle.</p>
+              </div>
             </div>
 
-            <div>
-              <span className="font-semibold text-gray-900">2. AI writes a reply</span>
-              <p>
-                Get a thoughtful, on-brand response tailored to the tone of the
-                customer’s review in seconds.
-              </p>
+            <div className="mt-6 border-t pt-4 text-xs text-gray-500">
+              Ideal for:
+              <span className="block mt-1">
+                🍕 Pizzerias • 🍣 Sushi bars • ☕ Cafés • 🍔 Burger spots • 🍝 Family restaurants
+              </span>
             </div>
-
-            <div>
-              <span className="font-semibold text-gray-900">3. Post with one click</span>
-              <p>
-                Approve the reply, then post it directly to Google — no hassle.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 border-t pt-4 text-xs text-gray-500">
-            Ideal for:
-            <span className="block mt-1">
-              🍕 Pizzerias • 🍣 Sushi bars • ☕ Cafés • 🍔 Burger spots • 🍝 Family restaurants
-            </span>
           </div>
         </div>
       </section>
 
+      {/* EVERYTHING BELOW stays unchanged */}
       {/* FEATURES */}
       <section className="max-w-5xl mx-auto mt-20 px-4 lg:px-0">
         <h2 className="text-2xl font-bold text-gray-900 text-center">
@@ -219,34 +225,26 @@ export default function Home() {
         </p>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-6">
-
           <div className="bg-white border border-gray-100 rounded-xl p-5">
             <h3 className="font-semibold text-gray-900">Starter</h3>
             <p className="mt-1 text-sm text-gray-500">For tiny teams</p>
             <p className="mt-4 text-2xl font-bold text-gray-900">TBD</p>
-            <p className="mt-2 text-xs text-gray-500">
-              Limited reviews/month — perfect for cafés.
-            </p>
+            <p className="mt-2 text-xs text-gray-500">Limited reviews/month — perfect for cafés.</p>
           </div>
 
           <div className="bg-blue-600 text-white rounded-xl p-5 shadow-md">
             <h3 className="font-semibold">Pro Restaurant</h3>
             <p className="mt-1 text-sm text-blue-100">Most popular</p>
             <p className="mt-4 text-2xl font-bold">Early-bird pricing</p>
-            <p className="mt-2 text-xs text-blue-100">
-              Unlimited replies for one location.
-            </p>
+            <p className="mt-2 text-xs text-blue-100">Unlimited replies for one location.</p>
           </div>
 
           <div className="bg-white border border-gray-100 rounded-xl p-5">
             <h3 className="font-semibold text-gray-900">Multi-location</h3>
             <p className="mt-1 text-sm text-gray-500">For 2+ locations</p>
             <p className="mt-4 text-2xl font-bold text-gray-900">Custom</p>
-            <p className="mt-2 text-xs text-gray-500">
-              Designed for growing restaurant groups.
-            </p>
+            <p className="mt-2 text-xs text-gray-500">Designed for growing restaurant groups.</p>
           </div>
-
         </div>
       </section>
 
@@ -269,11 +267,10 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="mt-2 text-xs text-gray-500">
-          You can unsubscribe anytime with one click.
-        </p>
+        <p className="mt-2 text-xs text-gray-500">You can unsubscribe anytime with one click.</p>
       </section>
     </div>
   );
 }
+
 
