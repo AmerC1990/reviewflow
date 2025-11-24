@@ -8,13 +8,15 @@ const CK_FORM_HTML = `
   data-uid="47a34e4c30"
   data-format="inline"
   data-version="5"
-  data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;You’re in! We’ll email you when we launch.&quot;,&quot;redirect_url&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}"
   min-width="400 500 600 700 800"
 >
   <div data-style="clean">
+
     <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
-      <div class="formkit-field">
+
+    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields" style="display:flex;flex-direction:column;gap:12px;width:100%;">
+
+      <div class="formkit-field" style="width:100%;">
         <input
           class="formkit-input"
           name="email_address"
@@ -22,27 +24,38 @@ const CK_FORM_HTML = `
           placeholder="Email Address"
           required
           type="email"
-          style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"
+          style="
+            width:100%;
+            padding:14px;
+            border:1.6px solid #d1d1d1;
+            border-radius:6px;
+            font-size:16px;
+            font-weight:400;
+            color:#000;
+          "
         />
       </div>
+
       <button
         data-element="submit"
-        class="formkit-submit formkit-submit"
-        style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"
+        class="formkit-submit"
+        style="
+          width:100%;
+          padding:14px;
+          background-color:#1677be;
+          color:white;
+          font-size:16px;
+          font-weight:600;
+          border-radius:6px;
+          cursor:pointer;
+        "
       >
-        <div class="formkit-spinner"><div></div><div></div><div></div></div>
         <span>Join Waitlist</span>
       </button>
-    </div>
-  </div>
 
-  <style>
-    .formkit-form[data-uid="47a34e4c30"] *{box-sizing:border-box;}
-    .formkit-form[data-uid="47a34e4c30"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-    .formkit-form[data-uid="47a34e4c30"] .formkit-input,
-    .formkit-form[data-uid="47a34e4c30"] .formkit-select,
-    .formkit-form[data-uid="47a34e4c30"] .formkit-checkboxes{width:100%;}
-  </style>
+    </div>
+
+  </div>
 </form>
 `;
 
@@ -100,10 +113,9 @@ export default function Home() {
               Join the early access waitlist for restaurants
             </p>
 
-            {/* FIXED FORM WRAPPER */}
             <div className="w-full max-w-md">
               <div
-                className="[&_.formkit-form]:w-full [&_.formkit-fields]:flex [&_.formkit-fields]:flex-col [&_.formkit-field]:w-full [&_.formkit-submit]:w-full"
+                className="[&_.formkit-form]:w-full"
                 dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
               />
             </div>
@@ -114,7 +126,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RIGHT SIDE CARD */}
+        {/* RIGHT CARD */}
         <div className="bg-white shadow-md rounded-xl p-6 border border-gray-100">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             How ReviewFlow helps your restaurant
@@ -165,22 +177,21 @@ export default function Home() {
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
             <h3 className="text-lg font-semibold text-gray-900">AI replies that feel human</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Every response is polite, personal, and sounds like a real person
-              from your restaurant — not a robot.
+              Every response feels personal — never robotic.
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
             <h3 className="text-lg font-semibold text-gray-900">Protect your reputation</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Turn bad experiences into second chances with empathetic responses.
+              Turn bad reviews into second chances with empathetic replies.
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
             <h3 className="text-lg font-semibold text-gray-900">Save hours every week</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Stop spending your day off writing replies. Let ReviewFlow do it.
+              Stop spending your day off replying to reviews.
             </p>
           </div>
         </div>
@@ -193,10 +204,9 @@ export default function Home() {
             For independent restaurants
           </p>
           <p className="text-gray-800 text-sm sm:text-base">
-            Whether you run a neighborhood café or a busy family restaurant,
-            reviews now matter as much as the food. ReviewFlow gives small
-            restaurants the same review-response power as big chains — without a
-            full-time staff.
+            Whether you run a café or a family restaurant, reviews now matter as
+            much as the food. ReviewFlow brings big-brand professionalism to
+            small teams.
           </p>
         </div>
       </section>
@@ -205,11 +215,11 @@ export default function Home() {
       <section className="max-w-4xl mx-auto mt-20 px-4 lg:px-0 text-center">
         <h2 className="text-2xl font-bold text-gray-900">Early access pricing</h2>
         <p className="mt-2 text-gray-600 text-sm sm:text-base">
-          We're still finalizing plans, but early restaurant users get simple,
-          affordable pricing and locked-in discounts.
+          Early restaurant users get simple, affordable pricing with locked-in discounts.
         </p>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-6">
+
           <div className="bg-white border border-gray-100 rounded-xl p-5">
             <h3 className="font-semibold text-gray-900">Starter</h3>
             <p className="mt-1 text-sm text-gray-500">For tiny teams</p>
@@ -236,24 +246,24 @@ export default function Home() {
               Designed for growing restaurant groups.
             </p>
           </div>
+
         </div>
       </section>
 
       {/* BOTTOM CTA */}
       <section className="max-w-3xl mx-auto mt-20 mb-16 px-4 lg:px-0 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-          Want first access when ReviewFlow launches for restaurants?
+          Want first access when ReviewFlow launches?
         </h2>
 
         <p className="mt-3 text-sm sm:text-base text-gray-600">
-          Join the waitlist — we’ll invite you as soon as the restaurant version is ready.
+          Join the waitlist — we'll invite you as soon as the restaurant version is ready.
         </p>
 
         <div className="mt-6 flex justify-center">
-          {/* FIXED FORM WRAPPER */}
           <div className="w-full max-w-md">
             <div
-              className="[&_.formkit-form]:w-full [&_.formkit-fields]:flex [&_.formkit-fields]:flex-col [&_.formkit-field]:w-full [&_.formkit-submit]:w-full"
+              className="[&_.formkit-form]:w-full"
               dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
             />
           </div>
@@ -266,3 +276,4 @@ export default function Home() {
     </div>
   );
 }
+
