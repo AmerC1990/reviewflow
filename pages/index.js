@@ -62,7 +62,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Head>
-        <title>ReviewFlow – AI Replies for Restaurant Reviews</title>
+        <title>
+          ReviewFlow – Reply to Google Reviews in Seconds — Built for Restaurants
+        </title>
         <meta
           name="description"
           content="ReviewFlow helps restaurants reply to Google reviews in seconds with AI – saving time and boosting reputation."
@@ -71,45 +73,65 @@ export default function Home() {
       </Head>
 
       {/* NAVBAR */}
-      <nav className="w-full px-6 py-4 flex justify-between items-center bg-white shadow-sm">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
-            R
+      <nav className="w-full border-b border-gray-200 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+              R
+            </div>
+            <div>
+              <span className="block text-lg font-semibold text-gray-900">
+                ReviewFlow
+              </span>
+              <span className="block text-xs text-gray-500">
+                AI review replies for restaurants
+              </span>
+            </div>
           </div>
-          <span className="text-xl font-semibold text-gray-900">ReviewFlow</span>
-        </div>
-        <div className="hidden sm:block text-sm text-gray-500">
-          Built for busy restaurant owners
+
+          <div className="hidden sm:flex items-center gap-3">
+            <span className="inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700 border border-green-100">
+              ✅ Built for restaurants
+            </span>
+            <a
+              href="#waitlist"
+              className="text-sm font-medium text-blue-600 hover:text-blue-700"
+            >
+              Join waitlist
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="max-w-5xl mx-auto mt-16 px-4 lg:px-0 grid lg:grid-cols-2 gap-10 items-center">
-
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-16 grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT */}
         <div>
-
-          {/* ⭐ UPDATED HEADLINE ⭐ */}
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-            Reply to Google Reviews in Seconds —{" "}
-            <span className="text-blue-600">Built for Restaurants</span>
-          </h1>
-
-          <p className="mt-4 text-lg text-gray-600">
-            ReviewFlow is built for restaurants that are too busy to reply to
-            every review, but care deeply about reputation. Get fast,
-            personalized replies to every Google review — without spending hours
-            at a computer.
+          <p className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 border border-blue-100">
+            New • AI replies for Google reviews
           </p>
 
-          <ul className="mt-6 space-y-2 text-gray-700 text-sm sm:text-base">
-            <li>✅ Perfect for busy restaurant owners & managers</li>
-            <li>✅ Handles positive, negative, and mixed reviews</li>
-            <li>✅ Keeps your tone polite, professional, and on-brand</li>
+          <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+            Reply to Google Reviews in Seconds{" "}
+            <span className="block text-xl sm:text-2xl text-blue-600 mt-2">
+              Built for restaurants
+            </span>
+          </h1>
+
+          <p className="mt-5 text-lg text-gray-600">
+            ReviewFlow helps busy restaurant owners reply to every Google review
+            in seconds — with thoughtful, on-brand responses that protect your
+            reputation and improve local SEO.
+          </p>
+
+          <ul className="mt-5 space-y-2 text-gray-700 text-sm sm:text-base">
+            <li>✅ Handles 5-star, 1-star, and everything in between</li>
+            <li>✅ Keeps your tone friendly, professional, and on-brand</li>
+            <li>✅ Designed for independent restaurants and small groups</li>
           </ul>
 
           {/* FORM */}
-          <div className="mt-8">
+          <div className="mt-8" id="waitlist">
             <p className="text-sm font-semibold text-gray-800 mb-2">
               Join the early access waitlist for restaurants
             </p>
@@ -125,156 +147,262 @@ export default function Home() {
               No spam. We’ll only email you when early access is ready.
             </p>
           </div>
+
+          <p className="mt-4 text-xs text-gray-400">
+            Built for: cafés, pizzerias, sushi bars, burger spots, and family
+            restaurants.
+          </p>
         </div>
 
-        {/* RIGHT CARD */}
-        <div className="bg-white shadow-md rounded-xl p-0 border border-gray-100 overflow-hidden">
-
-          {/* IMAGE */}
-          <img
-            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=60"
-            alt="Restaurant Interior"
-            className="w-full h-56 object-cover"
-          />
-
-          <div className="p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              How ReviewFlow helps your restaurant
-            </h2>
-
-            {/* AUTOMATED STEPS */}
-            <div className="space-y-4 text-sm text-gray-700">
-
+        {/* RIGHT – DASHBOARD MOCKUP */}
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-tr from-blue-100 via-transparent to-purple-100 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
+          <div className="relative bg-white rounded-3xl shadow-xl border border-gray-100 p-5 sm:p-6">
+            <div className="flex items-center justify-between mb-4">
               <div>
-                <span className="font-semibold text-gray-900">1. Connect your Google Business Profile</span>
-                <p>Import all your Google reviews instantly — no copy/paste or manual work.</p>
-              </div>
-
-              <div>
-                <span className="font-semibold text-gray-900">2. AI writes personalized replies automatically</span>
-                <p>
-                  Get thoughtful, on-brand responses crafted in seconds for every review.
+                <p className="text-xs font-semibold text-blue-600">
+                  ReviewFlow dashboard
+                </p>
+                <p className="text-sm text-gray-500">
+                  Today&apos;s Google review queue
                 </p>
               </div>
-
-              <div>
-                <span className="font-semibold text-gray-900">3. Approve or auto-post to Google</span>
-                <p>
-                  Publish replies with one click — or let ReviewFlow handle it automatically.
-                </p>
-              </div>
-
-            </div>
-
-            <div className="mt-6 border-t pt-4 text-xs text-gray-500">
-              Ideal for:
-              <span className="block mt-1">
-                🍕 Pizzerias • 🍣 Sushi bars • ☕ Cafés • 🍔 Burger spots • 🍝 Family restaurants
+              <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+                12 reviews ready
               </span>
             </div>
+
+            {/* Fake reviews list */}
+            <div className="space-y-3">
+              <div className="rounded-xl border border-gray-100 bg-gray-50 p-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1 text-amber-400 text-xs">
+                    ★★★★★
+                  </div>
+                  <span className="text-[11px] text-gray-500">
+                    Google • 2 hours ago
+                  </span>
+                </div>
+                <p className="mt-1 text-xs text-gray-700 line-clamp-2">
+                  “Best pasta we&apos;ve had in town. Staff was super friendly
+                  and the place felt cozy.”
+                </p>
+                <div className="mt-2 flex justify-end">
+                  <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-medium text-blue-700">
+                    AI reply ready
+                  </span>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-gray-100 bg-gray-50 p-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1 text-amber-400 text-xs">
+                    ★★☆☆☆
+                  </div>
+                  <span className="text-[11px] text-gray-500">
+                    Google • 5 hours ago
+                  </span>
+                </div>
+                <p className="mt-1 text-xs text-gray-700 line-clamp-2">
+                  “Food was great but our order took a long time to arrive.”
+                </p>
+                <div className="mt-2 flex justify-end">
+                  <span className="inline-flex items-center rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-medium text-orange-700">
+                    Needs review
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* AI reply preview */}
+            <div className="mt-5 rounded-2xl bg-slate-900 text-slate-50 p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-semibold text-emerald-300">
+                  Suggested reply
+                </span>
+                <span className="text-[11px] text-slate-300">
+                  Tone: friendly & professional
+                </span>
+              </div>
+              <p className="text-xs leading-relaxed text-slate-100">
+                Hi Sarah, thank you so much for the kind words about our pasta
+                and team. We&apos;re really happy you enjoyed your visit and
+                can&apos;t wait to welcome you back again soon!
+              </p>
+              <div className="mt-3 flex items-center justify-between">
+                <button className="text-[11px] px-3 py-1.5 rounded-full bg-emerald-500 text-white font-medium">
+                  Approve &amp; post to Google
+                </button>
+                <button className="text-[11px] text-slate-300 underline-offset-2 hover:underline">
+                  Edit reply
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* EVERYTHING BELOW UNCHANGED */}
       {/* FEATURES */}
-      <section className="max-w-5xl mx-auto mt-20 px-4 lg:px-0">
-        <h2 className="text-2xl font-bold text-gray-900 text-center">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center">
           Built for real restaurant life — not tech demos
         </h2>
-        <p className="mt-2 text-center text-gray-600 text-sm sm:text-base">
-          You're juggling staff, customers, and the kitchen. ReviewFlow quietly
-          handles reviews in the background.
+        <p className="mt-2 text-center text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+          You&apos;re juggling staff, suppliers, and guests. ReviewFlow quietly
+          keeps your reviews under control in the background.
         </p>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-8">
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-            <h3 className="text-lg font-semibold text-gray-900">AI replies that feel human</h3>
-            <p className="mt-2 text-sm text-gray-600">Every response feels personal — never robotic.</p>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-            <h3 className="text-lg font-semibold text-gray-900">Protect your reputation</h3>
+            <h3 className="text-lg font-semibold text-gray-900">
+              Replies that feel human
+            </h3>
             <p className="mt-2 text-sm text-gray-600">
-              Turn bad reviews into second chances with empathetic replies.
+              Every response sounds like someone from your restaurant — warm,
+              polite, and on-brand. No stiff AI jargon.
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-            <h3 className="text-lg font-semibold text-gray-900">Save hours every week</h3>
+            <h3 className="text-lg font-semibold text-gray-900">
+              Protect your reputation
+            </h3>
             <p className="mt-2 text-sm text-gray-600">
-              Stop spending your day off replying to reviews.
+              Quickly respond to negative reviews with empathy and
+              professionalism, so one bad night doesn&apos;t hurt your rating.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+            <h3 className="text-lg font-semibold text-gray-900">
+              Save hours every week
+            </h3>
+            <p className="mt-2 text-sm text-gray-600">
+              Stop spending your only day off writing replies. Let ReviewFlow do
+              the writing so you can run the restaurant.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
-      <section className="max-w-3xl mx-auto mt-20 px-4 lg:px-0">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-          <p className="text-sm uppercase tracking-wide text-blue-600 font-semibold mb-2">
-            For independent restaurants
+      {/* HOW IT WORKS */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+            How ReviewFlow works for your restaurant
+          </h2>
+          <p className="mt-1 text-sm text-gray-600">
+            Simple setup. No complicated onboarding.
           </p>
-          <p className="text-gray-800 text-sm sm:text-base">
-            Whether you run a café or a family restaurant, reviews now matter as
-            much as the food. ReviewFlow brings big-brand professionalism to
-            small teams.
-          </p>
+
+          <div className="mt-6 grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+            <div>
+              <div className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white mb-3">
+                1
+              </div>
+              <h3 className="font-semibold text-gray-900">
+                Connect Google Business
+              </h3>
+              <p className="mt-1">
+                Link your Google Business Profile and import your existing
+                reviews in a few clicks.
+              </p>
+            </div>
+
+            <div>
+              <div className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white mb-3">
+                2
+              </div>
+              <h3 className="font-semibold text-gray-900">
+                Let AI draft the replies
+              </h3>
+              <p className="mt-1">
+                ReviewFlow analyzes each review and drafts a response that fits
+                your restaurant&apos;s tone.
+              </p>
+            </div>
+
+            <div>
+              <div className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white mb-3">
+                3
+              </div>
+              <h3 className="font-semibold text-gray-900">
+                Approve or auto-post
+              </h3>
+              <p className="mt-1">
+                Approve replies in a simple queue — or enable auto-posting once
+                you trust the responses.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* PRICING */}
-      <section className="max-w-4xl mx-auto mt-20 px-4 lg:px-0 text-center">
-        <h2 className="text-2xl font-bold text-gray-900">Early access pricing</h2>
-        <p className="mt-2 text-gray-600 text-sm sm:text-base">
-          Early restaurant users get simple, affordable pricing with locked-in discounts.
+      {/* PRICING PREVIEW */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-16 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          Early access pricing
+        </h2>
+        <p className="mt-2 text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+          We&apos;re still finalizing plans, but early restaurant users will get
+          simple, affordable pricing and locked-in discounts.
         </p>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-6">
-
           <div className="bg-white border border-gray-100 rounded-xl p-5">
             <h3 className="font-semibold text-gray-900">Starter</h3>
             <p className="mt-1 text-sm text-gray-500">For tiny teams</p>
             <p className="mt-4 text-2xl font-bold text-gray-900">TBD</p>
-            <p className="mt-2 text-xs text-gray-500">Limited reviews/month — perfect for cafés.</p>
+            <p className="mt-2 text-xs text-gray-500">
+              Limited reviews/month — perfect for cafés and small spots.
+            </p>
           </div>
 
           <div className="bg-blue-600 text-white rounded-xl p-5 shadow-md">
             <h3 className="font-semibold">Pro Restaurant</h3>
             <p className="mt-1 text-sm text-blue-100">Most popular</p>
             <p className="mt-4 text-2xl font-bold">Early-bird pricing</p>
-            <p className="mt-2 text-xs text-blue-100">Unlimited replies for one location.</p>
+            <p className="mt-2 text-xs text-blue-100">
+              Unlimited replies for one location.
+            </p>
           </div>
 
           <div className="bg-white border border-gray-100 rounded-xl p-5">
             <h3 className="font-semibold text-gray-900">Multi-location</h3>
             <p className="mt-1 text-sm text-gray-500">For 2+ locations</p>
             <p className="mt-4 text-2xl font-bold text-gray-900">Custom</p>
-            <p className="mt-2 text-xs text-gray-500">Designed for growing restaurant groups.</p>
+            <p className="mt-2 text-xs text-gray-500">
+              Designed for growing restaurant groups and franchises.
+            </p>
           </div>
         </div>
       </section>
 
       {/* BOTTOM CTA */}
-      <section className="max-w-3xl mx-auto mt-20 mb-16 px-4 lg:px-0 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-          Want first access when ReviewFlow launches?
-        </h2>
+      <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-16 text-center">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Want first access when ReviewFlow launches?
+          </h2>
 
-        <p className="mt-3 text-sm sm:text-base text-gray-600">
-          Join the waitlist — we'll invite you as soon as the restaurant version is ready.
-        </p>
+          <p className="mt-3 text-sm sm:text-base text-gray-600">
+            Join the waitlist — we&apos;ll invite you as soon as the restaurant
+            version is ready. No obligation.
+          </p>
 
-        <div className="mt-6 flex justify-center">
-          <div className="w-full max-w-md">
-            <div
-              className="[&_.formkit-form]:w-full"
-              dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
-            />
+          <div className="mt-6 flex justify-center">
+            <div className="w-full max-w-md">
+              <div
+                className="[&_.formkit-form]:w-full"
+                dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }}
+              />
+            </div>
           </div>
-        </div>
 
-        <p className="mt-2 text-xs text-gray-500">You can unsubscribe anytime with one click.</p>
+          <p className="mt-2 text-xs text-gray-500">
+            You can unsubscribe anytime with one click.
+          </p>
+        </div>
       </section>
     </div>
   );
