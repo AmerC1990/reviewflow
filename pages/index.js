@@ -55,6 +55,16 @@ const CK_FORM_HTML = `
 
     </div>
   </div>
+
+  <!-- ⭐ FIX SUCCESS MESSAGE VISIBILITY ON MOBILE -->
+  <style>
+    .formkit-form[data-uid="47a34e4c30"] .formkit-alert-success {
+      color: #111 !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      margin-top: 12px !important;
+    }
+  </style>
 </form>
 `;
 
