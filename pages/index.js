@@ -11,7 +11,12 @@ const CK_FORM_HTML = `
   min-width="400 500 600 700 800"
 >
   <div data-style="clean">
-    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+    <ul class="formkit-alert formkit-alert-error"
+    data-element="errors"
+    data-group="alert"
+    style="display:none !important; margin:0; padding:0;">
+</ul>
+
 
     <div
       data-element="fields"
