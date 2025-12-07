@@ -11,18 +11,12 @@ const CK_FORM_HTML = `
   min-width="400 500 600 700 800"
 >
   <div data-style="clean">
-    <ul class="formkit-alert formkit-alert-error"
-    data-element="errors"
-    data-group="alert"
-    style="display:none !important; margin:0; padding:0;">
-</ul>
 
+    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
-    <div
-      data-element="fields"
-      class="seva-fields formkit-fields"
-      style="display:flex;flex-direction:column;gap:14px;width:100%;"
-    >
+    <div data-element="fields" class="seva-fields formkit-fields" 
+      style="display:flex;flex-direction:column;gap:14px;width:100%;">
+
       <div class="formkit-field" style="width:100%;">
         <input
           class="formkit-input"
@@ -59,31 +53,31 @@ const CK_FORM_HTML = `
       >
         <span>Join Waitlist</span>
       </button>
-    </div>
 
-    <style>
-      .formkit-alert-success{
-        color:#047857;
-        background:#ecfdf5;
-        border:1px solid #a7f3d0;
-        font-size:0.85rem;
-        padding:10px 12px;
-        border-radius:6px;
-        margin-top:8px;
-        text-align:left;
-      }
-      .formkit-alert-error{
-        color:#b91c1c;
-        background:#fef2f2;
-        border:1px solid #fecaca;
-        font-size:0.85rem;
-        padding:10px 12px;
-        border-radius:6px;
-        margin-top:8px;
-        text-align:left;
-      }
-    </style>
+    </div>
   </div>
+
+  <style>
+    /* Hide the default red alert bar */
+    .formkit-form[data-uid="47a34e4c30"] .formkit-alert {
+      display: none;
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* But if it's a success alert, show it nicely styled */
+    .formkit-form[data-uid="47a34e4c30"] .formkit-alert.formkit-alert-success {
+      display: block;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: #ecfdf3;  /* light green */
+      color: #166534;       /* dark green text */
+      font-size: 14px;
+    }
+  </style>
 </form>
 `;
 
@@ -218,7 +212,7 @@ export default function Home() {
                 </p>
                 <div className="mt-2 flex justify-end">
                   <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-medium text-blue-700">
-                    Suggested reply ready
+                    AI reply ready
                   </span>
                 </div>
               </div>
@@ -237,20 +231,20 @@ export default function Home() {
                 </p>
                 <div className="mt-2 flex justify-end">
                   <span className="inline-flex items-center rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-medium text-orange-700">
-                    Needs your review
+                    Needs review
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Reply preview */}
+            {/* AI reply preview */}
             <div className="mt-5 rounded-2xl bg-slate-900 text-slate-50 p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-semibold text-emerald-300">
-                  Suggested reply
+                  Suggested reply (customers never see this label)
                 </span>
                 <span className="text-[11px] text-slate-300">
-                  Tone: friendly &amp; professional
+                  Tone: friendly & professional
                 </span>
               </div>
               <p className="text-xs leading-relaxed text-slate-100">
@@ -362,46 +356,6 @@ export default function Home() {
                 Approve replies in a simple queue — or enable auto-posting once
                 you trust the responses.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY NOT GOOGLE'S AI SUGGESTIONS */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
-        <div className="bg-slate-900 text-slate-50 rounded-2xl p-6 sm:p-8 grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold">
-              “Can&apos;t I just use Google&apos;s AI suggestions?”
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-200">
-              Google sometimes suggests replies while you&apos;re typing — but
-              it&apos;s not built to protect your brand or handle every review
-              across time.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4 text-xs sm:text-sm">
-            <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
-              <p className="font-semibold text-rose-300 mb-1">
-                Google&apos;s quick suggestions
-              </p>
-              <ul className="space-y-1 text-slate-200">
-                <li>• Only appears when you&apos;re replying manually</li>
-                <li>• No central queue or overview</li>
-                <li>• No control over tone or rules</li>
-                <li>• No automation across all reviews</li>
-              </ul>
-            </div>
-            <div className="bg-slate-800 rounded-xl p-4 border border-emerald-500/70">
-              <p className="font-semibold text-emerald-300 mb-1">
-                ReviewFlow for restaurants
-              </p>
-              <ul className="space-y-1 text-slate-200">
-                <li>• Central inbox for every Google review</li>
-                <li>• Consistent tone that matches your brand</li>
-                <li>• Negative-review handling rules</li>
-                <li>• Option to approve or auto-post</li>
-              </ul>
             </div>
           </div>
         </div>
