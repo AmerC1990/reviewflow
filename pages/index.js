@@ -17,7 +17,7 @@ const CK_FORM_HTML = `
         placeholder="Enter your email"
         required
         type="email"
-        style="padding:16px;border:2px solid #d5d5d5;border-radius:8px;font-size:16px;"
+        style="padding:16px;border:2px solid #d5d5d5;border-radius:8px;font-size:16px;color:#111;::placeholder { color:#4B5563; }"
       />
       <button
         class="formkit-submit"
@@ -154,5 +154,6 @@ export default function Home() {
     </div>
   );
 }
+
 
 
