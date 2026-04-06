@@ -10,22 +10,22 @@ const CK_FORM_HTML = `
   data-version="5"
 >
   <div data-style="clean">
-    <div data-element="fields" style="display:flex;flex-direction:column;gap:14px;width:100%;">
+    <div data-element="fields" style="display:flex;flex-direction:column;gap:12px;width:100%;">
       <input
         class="formkit-input"
         name="email_address"
-        placeholder="Enter your email"
+        placeholder="Enter your work email"
         required
         type="email"
-        style="padding:16px;border:2px solid #d5d5d5;border-radius:8px;font-size:16px;color:#111;::placeholder { color:#4B5563; };box-shadow:0 1px 3px rgba(0,0,0,0.1);transition:all 0.2s ease;"
+        style="padding:15px 18px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;color:#0f172a;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06);outline:none;font-family:inherit;"
       />
       <button
         class="formkit-submit"
-        style="padding:16px;background:#1677be;color:#fff;font-size:16px;font-weight:600;border-radius:8px;transition:all 0.2s ease;"
-        onmouseover="this.style.background='#145a9c';"
-        onmouseout="this.style.background='#1677be';"
+        style="padding:15px;background:#0f172a;color:#fff;font-size:15px;font-weight:700;border-radius:10px;border:none;cursor:pointer;letter-spacing:0.01em;font-family:inherit;transition:all 0.2s ease;"
+        onmouseover="this.style.background='#1e40af';"
+        onmouseout="this.style.background='#0f172a';"
       >
-        Get early access
+        Get Early Access — It's Free →
       </button>
     </div>
   </div>
@@ -34,128 +34,235 @@ const CK_FORM_HTML = `
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8fafc", minHeight: "100vh" }}>
       <Head>
-        <title>ReviewFlow — Your AI Reputation Manager for Google Reviews</title>
+        <title>ReviewFlow — Never Write a Google Review Response Again</title>
         <meta
           name="description"
-          content="ReviewFlow is an AI Reputation Manager that monitors, writes, and posts Google review replies for restaurants — automatically."
+          content="ReviewFlow uses AI to instantly generate and manage Google review replies for local businesses. Save hours every week. Free during beta."
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
         <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <style>{`
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+          @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+          }
+          .fade-1 { animation: fadeUp 0.6s ease forwards; }
+          .fade-2 { animation: fadeUp 0.6s ease 0.1s forwards; opacity: 0; }
+          .fade-3 { animation: fadeUp 0.6s ease 0.2s forwards; opacity: 0; }
+          .fade-4 { animation: fadeUp 0.6s ease 0.3s forwards; opacity: 0; }
+          .fade-5 { animation: fadeUp 0.6s ease 0.4s forwards; opacity: 0; }
+          .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+          .card { transition: all 0.2s ease; }
+        `}</style>
       </Head>
 
-      {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20 grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full border border-blue-100">
-            Built for busy restaurant owners
-          </p>
+      {/* NAV */}
+      <nav style={{ padding: "20px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", maxWidth: "1100px", margin: "0 auto" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ width: "28px", height: "28px", background: "#0f172a", borderRadius: "7px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" />
+            </svg>
+          </div>
+          <span style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", letterSpacing: "-0.02em" }}>ReviewFlow</span>
+        </div>
+        <a
+          href="#get-access"
+          style={{ background: "#0f172a", color: "#fff", padding: "9px 18px", borderRadius: "8px", fontSize: "13px", fontWeight: 600, textDecoration: "none", letterSpacing: "0.01em" }}
+        >
+          Get early access
+        </a>
+      </nav>
 
-          <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-            Your AI Reputation Manager —
-            <br />
-            Google Reviews handled for you
+      {/* HERO */}
+      <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "60px 24px 80px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
+        <div>
+          {/* Badge */}
+          <div className="fade-1" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "100px", padding: "5px 12px", marginBottom: "20px" }}>
+            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#3b82f6", display: "inline-block", animation: "pulse-dot 2s infinite" }}></span>
+            <span style={{ fontSize: "12px", fontWeight: 600, color: "#1d4ed8" }}>Now in beta — free while spots last</span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="fade-2" style={{ fontSize: "clamp(36px, 5vw, 52px)", fontFamily: "'DM Serif Display', serif", color: "#0f172a", lineHeight: "1.1", letterSpacing: "-0.02em", marginBottom: "20px" }}>
+            Never write a Google review response again.
           </h1>
 
-          <p className="mt-5 text-lg text-gray-600 max-w-xl">
-            ReviewFlow automatically monitors your Google reviews, writes thoughtful replies,
-            and posts them for you — so you never ignore a customer again.
+          {/* Subheadline */}
+          <p className="fade-3" style={{ fontSize: "17px", color: "#475569", lineHeight: "1.7", marginBottom: "28px", maxWidth: "460px" }}>
+            ReviewFlow uses AI to instantly generate professional replies to your Google reviews — in your voice, for any rating. Stop losing customers to ignored reviews.
           </p>
 
-          <ul className="mt-6 space-y-2 text-gray-700">
-            <li>✅ Responds to every review (positive & negative)</li>
-            <li>✅ Protects your rating and public image</li>
-            <li>✅ Works 24/7 — no reminders, no stress</li>
-          </ul>
+          {/* Proof points */}
+          <div className="fade-4" style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "32px" }}>
+            {[
+              "Replies generated in seconds, not hours",
+              "Handles 1-star reviews without the stress",
+              "Sounds like you — not a robot",
+            ].map((point) => (
+              <div key={point} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <div style={{ width: "20px", height: "20px", borderRadius: "50%", background: "#dcfce7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 6L5 9L10 3" stroke="#16a34a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <span style={{ fontSize: "14px", color: "#334155", fontWeight: 500 }}>{point}</span>
+              </div>
+            ))}
+          </div>
 
-          <div className="mt-8 max-w-md">
-            <p className="text-sm font-semibold text-gray-900 mb-2">
-              Get early access (limited spots)
+          {/* Form */}
+          <div className="fade-5" id="get-access" style={{ maxWidth: "420px" }}>
+            <p style={{ fontSize: "12px", fontWeight: 600, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "10px" }}>
+              Join 50+ local business owners on the waitlist
             </p>
             <div dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }} />
-            <p className="mt-2 text-xs text-gray-700">
-              Join the waitlist — we’ll email you when access opens.
+            <p style={{ marginTop: "10px", fontSize: "12px", color: "#94a3b8", textAlign: "center" }}>
+              Free during beta. No credit card required. No spam.
             </p>
           </div>
         </div>
 
-        {/* VISUAL */}
-        <div className="relative bg-white rounded-3xl shadow-xl border p-6">
-          <p className="text-sm font-semibold text-gray-900 mb-3">
-            Today’s review activity
-          </p>
+        {/* VISUAL PANEL */}
+        <div style={{ background: "#0f172a", borderRadius: "20px", padding: "28px", boxShadow: "0 25px 60px rgba(15,23,42,0.25)" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
+            <span style={{ color: "#94a3b8", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>Latest reviews</span>
+            <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#4ade80", fontWeight: 600 }}>
+              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#4ade80", display: "inline-block", animation: "pulse-dot 2s infinite" }}></span>
+              Live
+            </span>
+          </div>
 
-          <div className="space-y-3">
-            <div className="p-3 rounded-xl bg-gray-50 border text-sm hover:scale-105 transition-transform duration-200 shadow-sm">
-              <span className="text-gray-900 font-medium">⭐⭐⭐⭐⭐ “Amazing food and service!”</span>
-              <div className="text-xs text-blue-600 mt-1">
-                AI replied automatically
-              </div>
+          {/* Review 1 — positive */}
+          <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "10px" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+              <span style={{ color: "#f1f5f9", fontSize: "13px", fontWeight: 600 }}>Sarah M.</span>
+              <span style={{ fontSize: "12px" }}>⭐⭐⭐⭐⭐</span>
             </div>
-
-            <div className="p-3 rounded-xl bg-gray-50 border text-sm hover:scale-105 transition-transform duration-200 shadow-sm">
-              <span className="text-gray-900 font-medium">⭐⭐ “Wait time was too long.”</span>
-              <div className="text-xs text-orange-600 mt-1">
-                AI handled with empathy
-              </div>
+            <p style={{ color: "#94a3b8", fontSize: "12px", lineHeight: "1.5", marginBottom: "10px" }}>"Amazing service, my go-to spot. Friendly staff every single time!"</p>
+            <div style={{ background: "#0f172a", borderRadius: "8px", padding: "10px", borderLeft: "2px solid #3b82f6" }}>
+              <p style={{ color: "#93c5fd", fontSize: "11px", fontWeight: 600, marginBottom: "4px" }}>✦ AI Reply Generated</p>
+              <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5" }}>Thank you so much, Sarah! We're thrilled to hear this — our team works hard every day to make sure you feel welcome. See you next time! 🙏</p>
             </div>
           </div>
 
-          <div className="mt-4 p-3 bg-slate-900 text-slate-100 rounded-xl text-xs">
-            Hi James — thanks for the feedback. We’re sorry about the wait
-            and truly appreciate you giving us a chance. We’re improving every day.
+          {/* Review 2 — negative */}
+          <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "10px" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+              <span style={{ color: "#f1f5f9", fontSize: "13px", fontWeight: 600 }}>James T.</span>
+              <span style={{ fontSize: "12px" }}>⭐⭐</span>
+            </div>
+            <p style={{ color: "#94a3b8", fontSize: "12px", lineHeight: "1.5", marginBottom: "10px" }}>"Wait time was way too long. Expected better."</p>
+            <div style={{ background: "#0f172a", borderRadius: "8px", padding: "10px", borderLeft: "2px solid #f59e0b" }}>
+              <p style={{ color: "#fcd34d", fontSize: "11px", fontWeight: 600, marginBottom: "4px" }}>✦ AI Reply Generated</p>
+              <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5" }}>Hi James, we're sorry about your experience — long waits are not what we aim for. We'd love to make it right. Please reach out directly and we'll take care of you.</p>
+            </div>
+          </div>
+
+          {/* Stats row */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginTop: "14px" }}>
+            {[
+              { value: "2 sec", label: "Avg reply time" },
+              { value: "100%", label: "Reviews covered" },
+            ].map(({ value, label }) => (
+              <div key={label} style={{ background: "#1e293b", borderRadius: "10px", padding: "12px", textAlign: "center" }}>
+                <p style={{ color: "#f1f5f9", fontSize: "20px", fontWeight: 700, fontFamily: "'DM Serif Display', serif" }}>{value}</p>
+                <p style={{ color: "#64748b", fontSize: "11px", marginTop: "2px" }}>{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO IT'S FOR */}
+      <section style={{ background: "#fff", padding: "70px 24px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <p style={{ textAlign: "center", fontSize: "12px", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>Built for local businesses</p>
+          <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 36px)", fontFamily: "'DM Serif Display', serif", color: "#0f172a", marginBottom: "48px", letterSpacing: "-0.02em" }}>
+            If you get Google reviews, you need this.
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
+            {[
+              { emoji: "🍕", label: "Restaurants" },
+              { emoji: "💇", label: "Salons & Spas" },
+              { emoji: "🦷", label: "Dentists" },
+              { emoji: "💪", label: "Gyms & Studios" },
+              { emoji: "🔧", label: "Contractors" },
+              { emoji: "🏥", label: "Med Spas & Clinics" },
+            ].map(({ emoji, label }) => (
+              <div key={label} className="card" style={{ background: "#f8fafc", border: "1.5px solid #e2e8f0", borderRadius: "14px", padding: "20px", textAlign: "center" }}>
+                <div style={{ fontSize: "28px", marginBottom: "8px" }}>{emoji}</div>
+                <p style={{ fontWeight: 600, fontSize: "14px", color: "#0f172a" }}>{label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* WHY */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900">
-          Why restaurants use ReviewFlow
+      <section style={{ padding: "70px 24px", maxWidth: "1100px", margin: "0 auto" }}>
+        <p style={{ textAlign: "center", fontSize: "12px", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>Why it matters</p>
+        <h2 style={{ textAlign: "center", fontSize: "clamp(26px, 4vw, 36px)", fontFamily: "'DM Serif Display', serif", color: "#0f172a", marginBottom: "48px", letterSpacing: "-0.02em" }}>
+          Ignored reviews cost you customers.
         </h2>
-
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl border hover:shadow-lg transition-shadow duration-200">
-            <h3 className="font-semibold text-lg text-gray-900">Never miss a review</h3>
-            <p className="mt-2 text-sm text-gray-700">
-              Every review gets a response — even when you’re busy or closed.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl border hover:shadow-lg transition-shadow duration-200">
-            <h3 className="font-semibold text-lg text-gray-900">Protect your reputation</h3>
-            <p className="mt-2 text-sm text-gray-700">
-              Handle negative reviews calmly before they scare customers away.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl border hover:shadow-lg transition-shadow duration-200">
-            <h3 className="font-semibold text-lg text-gray-900">Zero effort</h3>
-            <p className="mt-2 text-sm text-gray-700">
-              No dashboards to babysit. Your AI agent works in the background.
-            </p>
-          </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+          {[
+            {
+              icon: "⚡",
+              title: "Instant replies",
+              desc: "ReviewFlow generates a thoughtful, on-brand response in seconds — so no review goes unanswered, even at 2am.",
+            },
+            {
+              icon: "🛡️",
+              title: "Protect your reputation",
+              desc: "Negative reviews handled calmly and professionally, before they scare off potential customers browsing your profile.",
+            },
+            {
+              icon: "🎯",
+              title: "Sounds like you",
+              desc: "Set your business name, type, and tone once. Every reply reflects your brand — not a generic AI template.",
+            },
+          ].map(({ icon, title, desc }) => (
+            <div key={title} className="card" style={{ background: "#fff", border: "1.5px solid #e2e8f0", borderRadius: "16px", padding: "28px" }}>
+              <div style={{ fontSize: "28px", marginBottom: "14px" }}>{icon}</div>
+              <h3 style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", marginBottom: "8px" }}>{title}</h3>
+              <p style={{ fontSize: "14px", color: "#64748b", lineHeight: "1.7" }}>{desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="max-w-3xl mx-auto px-6 pb-20 text-center">
-        <div className="bg-white p-8 rounded-2xl border shadow-sm hover:shadow-lg transition-shadow duration-200">
-          <h2 className="text-2xl font-bold text-gray-900">
-            Ready to stop worrying about reviews?
+      <section style={{ padding: "0 24px 80px" }}>
+        <div style={{ maxWidth: "580px", margin: "0 auto", background: "#0f172a", borderRadius: "24px", padding: "52px 48px", textAlign: "center", boxShadow: "0 25px 60px rgba(15,23,42,0.2)" }}>
+          <h2 style={{ fontSize: "clamp(26px, 4vw, 36px)", fontFamily: "'DM Serif Display', serif", color: "#f1f5f9", marginBottom: "14px", letterSpacing: "-0.02em" }}>
+            Ready to stop writing review responses?
           </h2>
-          <p className="mt-3 text-gray-700">
-            Join the early access list and let ReviewFlow handle it for you.
+          <p style={{ color: "#94a3b8", fontSize: "16px", lineHeight: "1.6", marginBottom: "32px" }}>
+            Join the waitlist and get free access when we launch. No credit card, no commitment.
           </p>
-
-          <div className="mt-6 max-w-md mx-auto">
+          <div id="get-access-bottom">
             <div dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }} />
           </div>
+          <p style={{ marginTop: "14px", fontSize: "12px", color: "#475569" }}>
+            Free during beta · No spam · Cancel anytime
+          </p>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer style={{ borderTop: "1px solid #e2e8f0", padding: "24px", textAlign: "center" }}>
+        <p style={{ fontSize: "13px", color: "#94a3b8" }}>© 2025 ReviewFlow · <a href="mailto:hello@reviewflowapp.com" style={{ color: "#94a3b8", textDecoration: "none" }}>hello@reviewflowapp.com</a></p>
+      </footer>
     </div>
   );
 }
-
-
-
