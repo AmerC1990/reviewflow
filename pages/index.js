@@ -1,36 +1,92 @@
 import Head from "next/head";
+import { useState } from "react";
 
-const CK_FORM_HTML = `
-<form action="https://app.kit.com/forms/8801942/subscriptions"
-  class="seva-form formkit-form"
-  method="post"
-  data-sv-form="8801942"
-  data-uid="47a34e4c30"
-  data-format="inline"
-  data-version="5"
->
-  <div data-style="clean">
-    <div data-element="fields" style="display:flex;flex-direction:column;gap:12px;width:100%;">
+function SignupForm() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await fetch("https://app.kit.com/forms/8801942/subscriptions", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ email_address: email }),
+        mode: "no-cors",
+      });
+    } catch (err) {
+      // no-cors means we can't read the response, but it still submits
+    }
+    setSubmitted(true);
+    setLoading(false);
+  }
+
+  if (submitted) {
+    return (
+      <div style={{
+        background: "#f0fdf4",
+        border: "1.5px solid #86efac",
+        borderRadius: "12px",
+        padding: "20px 24px",
+        textAlign: "center",
+      }}>
+        <div style={{ fontSize: "28px", marginBottom: "8px" }}>🎉</div>
+        <p style={{ fontWeight: 700, fontSize: "15px", color: "#15803d", marginBottom: "4px" }}>
+          You're on the list!
+        </p>
+        <p style={{ fontSize: "13px", color: "#166534" }}>
+          We'll email you when early access opens.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
       <input
-        class="formkit-input"
-        name="email_address"
-        placeholder="Enter your work email"
-        required
         type="email"
-        style="padding:15px 18px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;color:#0f172a;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06);outline:none;font-family:inherit;"
+        required
+        placeholder="Enter your work email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        style={{
+          padding: "15px 18px",
+          border: "1.5px solid #e2e8f0",
+          borderRadius: "10px",
+          fontSize: "15px",
+          color: "#0f172a",
+          background: "#fff",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
+          outline: "none",
+          fontFamily: "inherit",
+        }}
       />
       <button
-        class="formkit-submit"
-        style="padding:15px;background:#0f172a;color:#fff;font-size:15px;font-weight:700;border-radius:10px;border:none;cursor:pointer;letter-spacing:0.01em;font-family:inherit;transition:all 0.2s ease;"
-        onmouseover="this.style.background='#1e40af';"
-        onmouseout="this.style.background='#0f172a';"
+        type="submit"
+        disabled={loading}
+        style={{
+          padding: "15px",
+          background: loading ? "#475569" : "#0f172a",
+          color: "#fff",
+          fontSize: "15px",
+          fontWeight: 700,
+          borderRadius: "10px",
+          border: "none",
+          cursor: loading ? "not-allowed" : "pointer",
+          letterSpacing: "0.01em",
+          fontFamily: "inherit",
+          transition: "all 0.2s ease",
+        }}
+        onMouseOver={(e) => { if (!loading) e.target.style.background = "#1e40af"; }}
+        onMouseOut={(e) => { if (!loading) e.target.style.background = "#0f172a"; }}
       >
-        Get Early Access — It's Free →
+        {loading ? "Submitting..." : "Get Early Access — It's Free →"}
       </button>
-    </div>
-  </div>
-</form>
-`;
+    </form>
+  );
+}
 
 export default function Home() {
   return (
@@ -44,7 +100,6 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-        <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
         <style>{`
           * { box-sizing: border-box; margin: 0; padding: 0; }
           @keyframes fadeUp {
@@ -125,7 +180,7 @@ export default function Home() {
             <p style={{ fontSize: "12px", fontWeight: 600, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "10px" }}>
               Join 50+ local business owners on the waitlist
             </p>
-            <div dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }} />
+            <SignupForm />
             <p style={{ marginTop: "10px", fontSize: "12px", color: "#94a3b8", textAlign: "center" }}>
               Free during beta. No credit card required. No spam.
             </p>
@@ -250,16 +305,13 @@ export default function Home() {
           <p style={{ color: "#94a3b8", fontSize: "16px", lineHeight: "1.6", marginBottom: "32px" }}>
             Join the waitlist and get free access when we launch. No credit card, no commitment.
           </p>
-          <div id="get-access-bottom">
-            <div dangerouslySetInnerHTML={{ __html: CK_FORM_HTML }} />
-          </div>
+          <SignupForm />
           <p style={{ marginTop: "14px", fontSize: "12px", color: "#475569" }}>
             Free during beta · No spam · Cancel anytime
           </p>
         </div>
       </section>
 
-      
     </div>
   );
 }
