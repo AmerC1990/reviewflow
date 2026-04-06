@@ -44,7 +44,7 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
         <style>{`
           * { box-sizing: border-box; margin: 0; padding: 0; }
           @keyframes fadeUp {
@@ -259,10 +259,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer style={{ borderTop: "1px solid #e2e8f0", padding: "24px", textAlign: "center" }}>
-        <p style={{ fontSize: "13px", color: "#94a3b8" }}>© 2025 ReviewFlow · <a href="mailto:hello@reviewflowapp.com" style={{ color: "#94a3b8", textDecoration: "none" }}>hello@reviewflowapp.com</a></p>
-      </footer>
+      
     </div>
   );
 }
