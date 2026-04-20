@@ -1,90 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
-
-function SignupForm({ dark = false }) {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      await fetch("https://app.kit.com/forms/8801942/subscriptions", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ email_address: email }),
-        mode: "no-cors",
-      });
-    } catch (err) {}
-    setSubmitted(true);
-    setLoading(false);
-  }
-
-  if (submitted) {
-    return (
-      <div style={{
-        background: "#f0fdf4",
-        border: "1.5px solid #86efac",
-        borderRadius: "12px",
-        padding: "20px 24px",
-        textAlign: "center",
-      }}>
-        <div style={{ fontSize: "28px", marginBottom: "8px" }}>🎉</div>
-        <p style={{ fontWeight: 700, fontSize: "15px", color: "#15803d", marginBottom: "4px" }}>
-          You're on the list!
-        </p>
-        <p style={{ fontSize: "13px", color: "#166534" }}>
-          We'll email you when early access opens.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-      <input
-        type="email"
-        required
-        placeholder="Enter your work email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        style={{
-          padding: "15px 18px",
-          border: dark ? "1.5px solid #334155" : "1.5px solid #e2e8f0",
-          borderRadius: "10px",
-          fontSize: "15px",
-          color: "#0f172a",
-          background: "#fff",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
-          outline: "none",
-          fontFamily: "inherit",
-          width: "100%",
-        }}
-      />
-      <button
-        type="submit"
-        disabled={loading}
-        style={{
-          padding: "15px",
-          background: loading ? "#475569" : (dark ? "#3b82f6" : "#0f172a"),
-          color: "#fff",
-          fontSize: "15px",
-          fontWeight: 700,
-          borderRadius: "10px",
-          border: "none",
-          cursor: loading ? "not-allowed" : "pointer",
-          letterSpacing: "0.01em",
-          fontFamily: "inherit",
-          transition: "all 0.2s ease",
-          width: "100%",
-        }}
-      >
-        {loading ? "Submitting..." : "Get Early Access — It's Free →"}
-      </button>
-    </form>
-  );
-}
 
 export default function Home() {
   return (
@@ -140,6 +54,43 @@ export default function Home() {
             display: block;
           }
 
+          .try-btn {
+            display: block;
+            background: #0f172a;
+            color: #fff;
+            fontSize: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: background 0.2s ease;
+          }
+
+          .try-btn:hover {
+            background: #1e40af;
+          }
+
+          .try-btn-blue {
+            display: block;
+            background: #3b82f6;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: background 0.2s ease;
+          }
+
+          .try-btn-blue:hover {
+            background: #2563eb;
+          }
+
           @media (max-width: 768px) {
             .hero-grid {
               grid-template-columns: 1fr;
@@ -173,8 +124,8 @@ export default function Home() {
           </div>
           <span style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", letterSpacing: "-0.02em" }}>ReviewFlow</span>
         </div>
-        <a href="#get-access" style={{ background: "#0f172a", color: "#fff", padding: "9px 16px", borderRadius: "8px", fontSize: "13px", fontWeight: 600, textDecoration: "none" }}>
-          Get early access
+        <a href="https://app.reviewflowapp.com/reviews" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>
+          Try It Free
         </a>
       </nav>
 
@@ -214,12 +165,11 @@ export default function Home() {
             </div>
 
             <div className="fade-5" id="get-access">
-              <p style={{ fontSize: "12px", fontWeight: 600, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "10px" }}>
-                Join 50+ local business owners on the waitlist
-              </p>
-              <SignupForm />
+              <a href="https://app.reviewflowapp.com/reviews" className="try-btn" style={{ maxWidth: "420px" }}>
+                Try It Free — No Sign Up Needed →
+              </a>
               <p style={{ marginTop: "10px", fontSize: "12px", color: "#94a3b8", textAlign: "center" }}>
-                Free during beta. No credit card required. No spam.
+                No credit card. No account. Just try it.
               </p>
             </div>
           </div>
@@ -323,11 +273,13 @@ export default function Home() {
             Ready to stop writing review responses?
           </h2>
           <p style={{ color: "#94a3b8", fontSize: "15px", lineHeight: "1.6", marginBottom: "28px" }}>
-            Join the waitlist and get free access when we launch. No credit card, no commitment.
+            Try it free right now — no account, no credit card needed.
           </p>
-          <SignupForm dark />
+          <a href="https://app.reviewflowapp.com/reviews" className="try-btn-blue">
+            Try It Free — No Sign Up Needed →
+          </a>
           <p style={{ marginTop: "14px", fontSize: "12px", color: "#475569" }}>
-            Free during beta · No spam · Cancel anytime
+            Free during beta · No credit card · No account needed
           </p>
         </div>
       </section>
