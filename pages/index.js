@@ -139,10 +139,7 @@ export default function Home() {
         <div className="hero-grid">
           {/* Left col */}
           <div>
-            <div className="fade-1" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "100px", padding: "5px 12px", marginBottom: "18px" }}>
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#3b82f6", display: "inline-block", animation: "pulse-dot 2s infinite" }}></span>
-              <span style={{ fontSize: "12px", fontWeight: 600, color: "#1d4ed8" }}>Now in beta — free while spots last</span>
-            </div>
+            
 
             <h1 className="fade-2" style={{ fontSize: "clamp(34px, 5vw, 52px)", fontFamily: "'DM Serif Display', serif", color: "#0f172a", lineHeight: "1.1", letterSpacing: "-0.02em", marginBottom: "18px" }}>
               Never write a Google review response again.
