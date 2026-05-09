@@ -124,9 +124,14 @@ export default function Home() {
           </div>
           <span style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", letterSpacing: "-0.02em" }}>ReviewFlow</span>
         </div>
-        <a href="https://app.reviewflowapp.com/reviews" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>
-          Try It Free
-        </a>
+        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <a href="/pricing" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>
+            Pricing
+          </a>
+          <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>
+            Try It Free
+          </a>
+        </div>
       </nav>
 
       {/* HERO */}
@@ -165,11 +170,11 @@ export default function Home() {
             </div>
 
             <div className="fade-5" id="get-access">
-              <a href="https://app.reviewflowapp.com/reviews" className="try-btn" style={{ maxWidth: "420px" }}>
-                Try It Free — No Sign Up Needed →
+              <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ maxWidth: "420px" }}>
+                Try It Free — Start Your 30-Day Trial →
               </a>
               <p style={{ marginTop: "10px", fontSize: "12px", color: "#94a3b8", textAlign: "center" }}>
-                No credit card. No account. Just try it.
+                No credit card required. Cancel anytime.
               </p>
             </div>
           </div>
@@ -273,13 +278,13 @@ export default function Home() {
             Ready to stop writing review responses?
           </h2>
           <p style={{ color: "#94a3b8", fontSize: "15px", lineHeight: "1.6", marginBottom: "28px" }}>
-            Try it free right now — no account, no credit card needed.
+            Start your free 30-day trial today. No credit card required.
           </p>
-          <a href="https://app.reviewflowapp.com/reviews" className="try-btn-blue">
-            Try It Free — No Sign Up Needed →
+          <a href="https://app.reviewflowapp.com/signup" className="try-btn-blue">
+            Start Free Trial — No Credit Card →
           </a>
           <p style={{ marginTop: "14px", fontSize: "12px", color: "#475569" }}>
-            Free during beta · No credit card · No account needed
+            30-day free trial · Then $49/month · Cancel anytime
           </p>
         </div>
       </section>
