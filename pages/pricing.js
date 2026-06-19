@@ -45,23 +45,15 @@ export default function Pricing() {
       {/* PRICING CARD */}
       <section style={{ maxWidth: "480px", margin: "40px auto", padding: "0 20px" }}>
         <div style={{ background: "#0f172a", borderRadius: "24px", padding: "48px 44px", textAlign: "center", boxShadow: "0 25px 60px rgba(15,23,42,0.2)" }}>
-          
-          {/* Badge */}
           <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#1e293b", border: "1px solid #334155", borderRadius: "100px", padding: "5px 12px", marginBottom: "24px" }}>
             <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#4ade80", display: "inline-block" }}></span>
             <span style={{ fontSize: "12px", fontWeight: 600, color: "#94a3b8" }}>30-day free trial included</span>
           </div>
-
-          {/* Plan name */}
           <p style={{ fontSize: "14px", fontWeight: 600, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "8px" }}>ReviewFlow</p>
-
-          {/* Price */}
           <div style={{ marginBottom: "32px" }}>
             <span style={{ fontSize: "64px", fontWeight: 700, color: "#f1f5f9", fontFamily: "'DM Serif Display', serif", letterSpacing: "-0.02em" }}>$49</span>
             <span style={{ fontSize: "18px", color: "#64748b", marginLeft: "4px" }}>/month</span>
           </div>
-
-          {/* Features */}
           <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "36px", textAlign: "left" }}>
             {[
               "AI-generated replies for every review",
@@ -82,26 +74,9 @@ export default function Pricing() {
               </div>
             ))}
           </div>
-
-          {/* CTA */}
-          <a
-            href="https://app.reviewflowapp.com/signup"
-            style={{
-              display: "block",
-              background: "#3b82f6",
-              color: "#fff",
-              fontSize: "16px",
-              fontWeight: 700,
-              padding: "16px",
-              borderRadius: "10px",
-              textDecoration: "none",
-              letterSpacing: "0.01em",
-              transition: "background 0.2s ease",
-            }}
-          >
+          <a href="https://app.reviewflowapp.com/signup" style={{ display: "block", background: "#3b82f6", color: "#fff", fontSize: "16px", fontWeight: 700, padding: "16px", borderRadius: "10px", textDecoration: "none", letterSpacing: "0.01em" }}>
             Start Free Trial — No Credit Card →
           </a>
-
           <p style={{ marginTop: "14px", fontSize: "12px", color: "#475569" }}>
             Free for 30 days · Then $49/month · Cancel anytime
           </p>
@@ -135,6 +110,10 @@ export default function Pricing() {
               q: "How does it work?",
               a: "Sign up, tell us about your business, and start generating replies instantly. Edit them if you want, then copy and paste into Google.",
             },
+            {
+              q: "How do I get support?",
+              a: "Email us anytime at support@reviewflowapp.com — we typically respond within 24 hours.",
+            },
           ].map(({ q, a }) => (
             <div key={q} style={{ background: "#fff", border: "1.5px solid #e2e8f0", borderRadius: "14px", padding: "20px 24px" }}>
               <p style={{ fontWeight: 700, fontSize: "15px", color: "#0f172a", marginBottom: "8px" }}>{q}</p>
@@ -147,7 +126,10 @@ export default function Pricing() {
       {/* FOOTER */}
       <footer style={{ borderTop: "1px solid #e2e8f0", padding: "24px", textAlign: "center" }}>
         <p style={{ fontSize: "13px", color: "#94a3b8" }}>
-          © 2026 ReviewFlow · <a href="/" style={{ color: "#94a3b8", textDecoration: "none" }}>Home</a>
+          © 2026 ReviewFlow ·{" "}
+          <a href="/" style={{ color: "#94a3b8", textDecoration: "none" }}>Home</a>
+          {" · "}
+          <a href="mailto:support@reviewflowapp.com" style={{ color: "#94a3b8", textDecoration: "none" }}>support@reviewflowapp.com</a>
         </p>
       </footer>
     </div>

@@ -50,15 +50,12 @@ export default function Home() {
             gap: 20px;
           }
 
-          .dark-panel {
-            display: block;
-          }
+          .dark-panel { display: block; }
 
           .try-btn {
             display: block;
             background: #0f172a;
             color: #fff;
-            fontSize: 16px;
             font-size: 16px;
             font-weight: 700;
             padding: 16px;
@@ -69,9 +66,7 @@ export default function Home() {
             transition: background 0.2s ease;
           }
 
-          .try-btn:hover {
-            background: #1e40af;
-          }
+          .try-btn:hover { background: #1e40af; }
 
           .try-btn-blue {
             display: block;
@@ -87,29 +82,14 @@ export default function Home() {
             transition: background 0.2s ease;
           }
 
-          .try-btn-blue:hover {
-            background: #2563eb;
-          }
+          .try-btn-blue:hover { background: #2563eb; }
 
           @media (max-width: 768px) {
-            .hero-grid {
-              grid-template-columns: 1fr;
-              gap: 36px;
-            }
-            .dark-panel {
-              display: none;
-            }
-            .business-grid {
-              grid-template-columns: repeat(2, 1fr);
-              gap: 12px;
-            }
-            .why-grid {
-              grid-template-columns: 1fr;
-              gap: 14px;
-            }
-            .final-cta-inner {
-              padding: 36px 24px !important;
-            }
+            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+            .dark-panel { display: none; }
+            .business-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .why-grid { grid-template-columns: 1fr; gap: 14px; }
+            .final-cta-inner { padding: 36px 24px !important; }
           }
         `}</style>
       </Head>
@@ -125,30 +105,21 @@ export default function Home() {
           <span style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", letterSpacing: "-0.02em" }}>ReviewFlow</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <a href="/pricing" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>
-            Pricing
-          </a>
-          <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>
-            Try It Free
-          </a>
+          <a href="/pricing" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>Pricing</a>
+          <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>Try It Free</a>
         </div>
       </nav>
 
       {/* HERO */}
       <section style={{ maxWidth: "1100px", margin: "0 auto", padding: "40px 20px 60px" }}>
         <div className="hero-grid">
-          {/* Left col */}
           <div>
-            
-
             <h1 className="fade-2" style={{ fontSize: "clamp(34px, 5vw, 52px)", fontFamily: "'DM Serif Display', serif", color: "#0f172a", lineHeight: "1.1", letterSpacing: "-0.02em", marginBottom: "18px" }}>
               Never write a Google review response again.
             </h1>
-
             <p className="fade-3" style={{ fontSize: "16px", color: "#475569", lineHeight: "1.7", marginBottom: "24px" }}>
               ReviewFlow uses AI to instantly generate professional replies to your Google reviews — in your voice, for any rating. Stop losing customers to ignored reviews.
             </p>
-
             <div className="fade-4" style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "28px" }}>
               {[
                 "Replies generated in seconds, not hours",
@@ -165,7 +136,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
             <div className="fade-5" id="get-access">
               <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ maxWidth: "420px" }}>
                 Try It Free — Start Your 30-Day Trial →
@@ -176,7 +146,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right col — hidden on mobile */}
           <div className="dark-panel" style={{ background: "#0f172a", borderRadius: "20px", padding: "28px", boxShadow: "0 25px 60px rgba(15,23,42,0.25)" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
               <span style={{ color: "#94a3b8", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>Latest reviews</span>
@@ -185,7 +154,6 @@ export default function Home() {
                 Live
               </span>
             </div>
-
             <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
                 <span style={{ color: "#f1f5f9", fontSize: "13px", fontWeight: 600 }}>Sarah M.</span>
@@ -197,7 +165,6 @@ export default function Home() {
                 <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5" }}>Thank you so much, Sarah! We're thrilled to hear this — our team works hard every day to make sure you feel welcome. See you next time! 🙏</p>
               </div>
             </div>
-
             <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
                 <span style={{ color: "#f1f5f9", fontSize: "13px", fontWeight: 600 }}>James T.</span>
@@ -209,7 +176,6 @@ export default function Home() {
                 <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5" }}>Hi James, we're sorry about your experience — long waits are not what we aim for. We'd love to make it right. Please reach out directly and we'll take care of you.</p>
               </div>
             </div>
-
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginTop: "14px" }}>
               {[{ value: "2 sec", label: "Avg reply time" }, { value: "100%", label: "Reviews covered" }].map(({ value, label }) => (
                 <div key={label} style={{ background: "#1e293b", borderRadius: "10px", padding: "12px", textAlign: "center" }}>
@@ -285,6 +251,16 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer style={{ borderTop: "1px solid #e2e8f0", padding: "24px 20px", textAlign: "center" }}>
+        <p style={{ fontSize: "13px", color: "#94a3b8" }}>
+          © 2026 ReviewFlow ·{" "}
+          <a href="/pricing" style={{ color: "#94a3b8", textDecoration: "none" }}>Pricing</a>
+          {" · "}
+          <a href="mailto:support@reviewflowapp.com" style={{ color: "#94a3b8", textDecoration: "none" }}>support@reviewflowapp.com</a>
+        </p>
+      </footer>
 
     </div>
   );
