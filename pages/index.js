@@ -259,6 +259,8 @@ export default function Home() {
           <a href="/pricing" style={{ color: "#94a3b8", textDecoration: "none" }}>Pricing</a>
           {" · "}
           <a href="mailto:support@reviewflowapp.com" style={{ color: "#94a3b8", textDecoration: "none" }}>support@reviewflowapp.com</a>
+          {" · "}
+          <a href="https://g.page/r/Cds5apVCCkR4EBM/review" target="_blank" rel="noopener noreferrer" style={{ color: "#94a3b8", textDecoration: "none" }}>Leave a review</a>
         </p>
       </footer>
 
