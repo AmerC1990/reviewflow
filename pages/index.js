@@ -124,7 +124,7 @@ export default function Home() {
               {[
                 "Replies generated in seconds, not hours",
                 "Handles 1-star reviews without the stress",
-                "Sounds like you — not a robot",
+                "Posts directly to Google — no copy-pasting",
               ].map((point) => (
                 <div key={point} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <div style={{ width: "20px", height: "20px", borderRadius: "50%", background: "#dcfce7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -146,26 +146,42 @@ export default function Home() {
             </div>
           </div>
 
+          {/* RIGHT PANEL */}
           <div className="dark-panel" style={{ background: "#0f172a", borderRadius: "20px", padding: "28px", boxShadow: "0 25px 60px rgba(15,23,42,0.25)" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
-              <span style={{ color: "#94a3b8", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>Latest reviews</span>
+              <div>
+                <span style={{ color: "#f1f5f9", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>Unanswered Reviews</span>
+                <span style={{ color: "#475569", fontSize: "11px", marginLeft: "8px" }}>· Last 90 days</span>
+              </div>
               <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#4ade80", fontWeight: 600 }}>
                 <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#4ade80", display: "inline-block", animation: "pulse-dot 2s infinite" }}></span>
                 Live
               </span>
             </div>
+
+            {/* Review 1 */}
             <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
                 <span style={{ color: "#f1f5f9", fontSize: "13px", fontWeight: 600 }}>Sarah M.</span>
                 <span style={{ fontSize: "12px" }}>⭐⭐⭐⭐⭐</span>
               </div>
               <p style={{ color: "#94a3b8", fontSize: "12px", lineHeight: "1.5", marginBottom: "10px" }}>"Amazing service, my go-to spot. Friendly staff every single time!"</p>
-              <div style={{ background: "#0f172a", borderRadius: "8px", padding: "10px", borderLeft: "2px solid #3b82f6" }}>
-                <p style={{ color: "#93c5fd", fontSize: "11px", fontWeight: 600, marginBottom: "4px" }}>✦ AI Reply Generated</p>
-                <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5" }}>Thank you so much, Sarah! We're thrilled to hear this — our team works hard every day to make sure you feel welcome. See you next time! 🙏</p>
+              <div style={{ background: "#0f172a", borderRadius: "8px", padding: "10px", borderLeft: "2px solid #059669" }}>
+                <p style={{ color: "#34d399", fontSize: "11px", fontWeight: 600, marginBottom: "4px" }}>✦ AI Reply Generated</p>
+                <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5", marginBottom: "10px" }}>Thank you so much, Sarah! We're thrilled to hear this — our team works hard every day to make sure you feel welcome. See you next time! 🙏</p>
+                <div style={{ display: "flex", gap: "6px" }}>
+                  <div style={{ flex: 1, background: "#059669", borderRadius: "6px", padding: "6px 10px", textAlign: "center", fontSize: "11px", fontWeight: 700, color: "#fff", cursor: "pointer" }}>
+                    ↑ Reply on Google
+                  </div>
+                  <div style={{ background: "#1e293b", borderRadius: "6px", padding: "6px 10px", textAlign: "center", fontSize: "11px", fontWeight: 600, color: "#94a3b8", cursor: "pointer", border: "1px solid #334155" }}>
+                    Edit
+                  </div>
+                </div>
               </div>
             </div>
-            <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "10px" }}>
+
+            {/* Review 2 */}
+            <div style={{ background: "#1e293b", borderRadius: "12px", padding: "14px", marginBottom: "14px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
                 <span style={{ color: "#f1f5f9", fontSize: "13px", fontWeight: 600 }}>James T.</span>
                 <span style={{ fontSize: "12px" }}>⭐⭐</span>
@@ -173,11 +189,20 @@ export default function Home() {
               <p style={{ color: "#94a3b8", fontSize: "12px", lineHeight: "1.5", marginBottom: "10px" }}>"Wait time was way too long. Expected better."</p>
               <div style={{ background: "#0f172a", borderRadius: "8px", padding: "10px", borderLeft: "2px solid #f59e0b" }}>
                 <p style={{ color: "#fcd34d", fontSize: "11px", fontWeight: 600, marginBottom: "4px" }}>✦ AI Reply Generated</p>
-                <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5" }}>Hi James, we're sorry about your experience — long waits are not what we aim for. We'd love to make it right. Please reach out directly and we'll take care of you.</p>
+                <p style={{ color: "#cbd5e1", fontSize: "12px", lineHeight: "1.5", marginBottom: "10px" }}>Hi James, we're sorry about your experience — long waits are not what we aim for. We'd love to make it right. Please reach out directly and we'll take care of you.</p>
+                <div style={{ display: "flex", gap: "6px" }}>
+                  <div style={{ flex: 1, background: "#059669", borderRadius: "6px", padding: "6px 10px", textAlign: "center", fontSize: "11px", fontWeight: 700, color: "#fff", cursor: "pointer" }}>
+                    ↑ Reply on Google
+                  </div>
+                  <div style={{ background: "#1e293b", borderRadius: "6px", padding: "6px 10px", textAlign: "center", fontSize: "11px", fontWeight: 600, color: "#94a3b8", cursor: "pointer", border: "1px solid #334155" }}>
+                    Edit
+                  </div>
+                </div>
               </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginTop: "14px" }}>
-              {[{ value: "2 sec", label: "Avg reply time" }, { value: "100%", label: "Reviews covered" }].map(({ value, label }) => (
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+              {[{ value: "2 sec", label: "Avg reply time" }, { value: "100%", label: "Reviews answered" }].map(({ value, label }) => (
                 <div key={label} style={{ background: "#1e293b", borderRadius: "10px", padding: "12px", textAlign: "center" }}>
                   <p style={{ color: "#f1f5f9", fontSize: "20px", fontWeight: 700, fontFamily: "'DM Serif Display', serif" }}>{value}</p>
                   <p style={{ color: "#64748b", fontSize: "11px", marginTop: "2px" }}>{label}</p>
@@ -223,7 +248,7 @@ export default function Home() {
           {[
             { icon: "⚡", title: "Instant replies", desc: "ReviewFlow generates a thoughtful, on-brand response in seconds — so no review goes unanswered, even at 2am." },
             { icon: "🛡️", title: "Protect your reputation", desc: "Negative reviews handled calmly and professionally, before they scare off potential customers browsing your profile." },
-            { icon: "🎯", title: "Sounds like you", desc: "Set your business name, type, and tone once. Every reply reflects your brand — not a generic AI template." },
+            { icon: "🎯", title: "Posts directly to Google", desc: "No copy-pasting, no switching tabs. Generate a reply and post it to Google in one click — right from your dashboard." },
           ].map(({ icon, title, desc }) => (
             <div key={title} className="card" style={{ background: "#fff", border: "1.5px solid #e2e8f0", borderRadius: "16px", padding: "24px" }}>
               <div style={{ fontSize: "26px", marginBottom: "12px" }}>{icon}</div>
