@@ -5,7 +5,7 @@ export default function Home() {
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: "#f8fafc", minHeight: "100vh" }}>
       <Head>
         <title>ReviewFlow — Never Write a Google Review Response Again</title>
-        <meta name="description" content="ReviewFlow uses AI to instantly generate and manage Google review replies for local businesses. Save hours every week. Free during beta." />
+        <meta name="description" content="ReviewFlow uses AI to instantly generate professional replies to your Google reviews — in your voice, for any rating. 30-day free trial. No credit card required." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
