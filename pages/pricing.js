@@ -134,6 +134,8 @@ export default function Pricing() {
           <a href="https://g.page/r/Cds5apVCCkR4EBM/review" target="_blank" rel="noopener noreferrer" style={{ color: "#94a3b8", textDecoration: "none" }}>Leave a review</a>
           {" · "}
           <a href="/privacy" style={{ color: "#94a3b8", textDecoration: "none" }}>Privacy Policy</a>
+          {" · "}
+          <a href="/terms" style={{ color: "#94a3b8", textDecoration: "none" }}>Terms of Service</a>
         </p>
       </footer>
     </div>
