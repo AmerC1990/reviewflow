@@ -277,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
+     {/* FOOTER */}
       <footer style={{ borderTop: "1px solid #e2e8f0", padding: "24px 20px", textAlign: "center" }}>
         <p style={{ fontSize: "13px", color: "#94a3b8" }}>
           © 2026 ReviewFlow ·{" "}
@@ -286,6 +286,8 @@ export default function Home() {
           <a href="mailto:support@reviewflowapp.com" style={{ color: "#94a3b8", textDecoration: "none" }}>support@reviewflowapp.com</a>
           {" · "}
           <a href="https://g.page/r/Cds5apVCCkR4EBM/review" target="_blank" rel="noopener noreferrer" style={{ color: "#94a3b8", textDecoration: "none" }}>Leave a review</a>
+          {" · "}
+          <a href="/privacy" style={{ color: "#94a3b8", textDecoration: "none" }}>Privacy Policy</a>
         </p>
       </footer>
 
