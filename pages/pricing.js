@@ -108,7 +108,7 @@ export default function Pricing() {
             },
             {
               q: "How does it work?",
-              a: "Sign up, tell us about your business, and start generating replies instantly. Edit them if you want, then copy and paste into Google.",
+              a: "Sign up, tell us about your business, and connect your Google Business Profile. Generate AI replies instantly and post them directly to Google with one click.",
             },
             {
               q: "How do I get support?",
