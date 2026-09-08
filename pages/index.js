@@ -85,6 +85,8 @@ export default function Home() {
           .try-btn-blue:hover { background: #2563eb; }
 
           @media (max-width: 768px) {
+            .nav-links { gap: 12px !important; }
+            .nav-links a { font-size: 12px !important; }
             .hero-grid { grid-template-columns: 1fr; gap: 36px; }
             .dark-panel { display: none; }
             .business-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -104,7 +106,7 @@ export default function Home() {
           </div>
           <span style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", letterSpacing: "-0.02em" }}>ReviewFlow</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
           <a href="/calculator" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>Savings</a>
           <a href="/pricing" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>Pricing</a>
           <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>Try It Free</a>
