@@ -105,6 +105,7 @@ export default function Home() {
           <span style={{ fontWeight: 700, fontSize: "16px", color: "#0f172a", letterSpacing: "-0.02em" }}>ReviewFlow</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <a href="/calculator" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>Calculator</a>
           <a href="/pricing" style={{ fontSize: "13px", fontWeight: 600, color: "#64748b", textDecoration: "none" }}>Pricing</a>
           <a href="https://app.reviewflowapp.com/signup" className="try-btn" style={{ padding: "9px 16px", fontSize: "13px", borderRadius: "8px" }}>Try It Free</a>
         </div>
